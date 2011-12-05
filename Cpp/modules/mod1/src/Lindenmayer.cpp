@@ -12,7 +12,7 @@ Lindenmayer::Lindenmayer()
 {
     position[0] = position[1] = 0.0;
     _dAngle = 0.0;
-_pFile = new ofstream;
+    _pFile = new ofstream;
 }
 
 Lindenmayer::Lindenmayer(int iNumberOfIterations)
