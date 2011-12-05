@@ -51,7 +51,7 @@ public://a los elementos de aqui para abajo se peden acceder fuera de la clase
 //para poder acceder y cambiar elementos privados de la clase
     void setRules(const string &sRule1, const string &sRule2);
     void setInitialCondition(const string &sCond);
-    void setFilename(const string &sName);
+    void setFileName(const string &sName);
     void setAngle(double dAngleI);
     void setIterationsNumber(int iIter);
 
@@ -65,7 +65,7 @@ private://a los elementos de aca para abajo solo se puede acceder desde la clase
     string _sCondition, _sRuley, _sRulex, _sFileName;
     double position[2], _dAngle, _dAngleInit;
     int _iIterations;
-    ofstream * _file;
+    ofstream * _pFile;
 
 };//ojo con este ; es como las estructuras
 

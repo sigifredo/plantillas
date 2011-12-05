@@ -12,6 +12,7 @@ Lindenmayer::Lindenmayer()
 {
     position[0] = position[1] = 0.0;
     _dAngle = 0.0;
+_pFile = new ofstream;
 }
 
 Lindenmayer::Lindenmayer(int iNumberOfIterations)
@@ -25,8 +26,8 @@ Lindenmayer::~Lindenmayer()
 //este se invoca cuando una isntancia de una clase (objeto) se va a borrar, o cuando el programa sale
 //si ud define muchos vectores, por favor, hágales un delete en una función como esta
 {
-    _file->close();
-    delete _file;
+    _pFile->close();
+    delete _pFile;
 }
 
 void Lindenmayer::replace(const string &str)
@@ -69,7 +70,7 @@ void Lindenmayer::play()
 
 void Lindenmayer::write()
 {
-    (*_file) << position[0] << " " << position[1] << "\n";
+    (*_pFile) << position[0] << " " << position[1] << "\n";
 }
 
 //MUTADORES
@@ -84,10 +85,10 @@ void Lindenmayer::setInitialCondition(const string &cond)
     _sCondition=cond;
 }
 
-void Lindenmayer::setFilename(const string &name)
+void Lindenmayer::setFileName(const string &name)
 {
-    _sFileName=name;
-    _file->open(name.c_str());
+    _sFileName = name;
+    _pFile->open(name.c_str());
 }
 
 void Lindenmayer::setAngle(double _dAngleI)
